@@ -82,20 +82,20 @@ Processing high-resolution images are quite resource-intensive. Rescaling makes 
 
 ![Resized image](images/2-Resized%20Image.jpg)
 
-4. Morph functions
+2. Morph functions
 
 Corner detection will work best if we can omit unnecessary details in the image like the writings on the page. We can use morphological transformations - particularly a `Closing` which is a Dilation followed by Erosion - after converting the image to grayscale. A `Closing` operation is useful in closing small holes inside the foreground objects, or small black points on the object.
 
 ![Gray image](images/3-Gray%20image.jpg)
 ![Closed image](images/4-Closed%20image.jpg)
 
-1. Filter noise to prevent false edge detection.
+3. Filter noise to prevent false edge detection.
 
 Noise can also affect edge detection, so it is essential to filter it out. Here we use `Gaussian Blur` to smooth the image.
 
 ![Blured image](images/5-Blured%20image.jpg)
 
-6. Apply Canny edge detection to find the document edges
+4. Apply Canny edge detection to find the document edges
 
 Now we can apply Canny edge detection to find the document edges.
 
