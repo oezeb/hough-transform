@@ -11,6 +11,9 @@ The Hough Line Transform is a transform used to detect straight lines. To apply 
 
 An edge image is the output of an edge detection algorithm. An edge detection algorithm detects the edge in an image by determining where the brightness of an image changes drastically. Examples of edge detection algorithms include Canny, Sobel, Laplacian, etc. For the Hough Transform algorithm, it is crucial to perform edge detection first to produce an edge image which will then be used as input into the algorithm.
 
+![Valve image](images/2-Resized%20Image.jpg)
+![Valve Canny image](images/6-Canny%20edges.jpg)
+
 ### Alternate way to represent a line
 
 In general, the straight line $y=mx$ can be represented as a point $(m, b)$. However, vertical lines pose a problem. They would give rise to unbound values of the slope $m$. Programmatically, this means that a computer would need an infinite amount of memory to represent all possible values of $m$. To avoid this issue, a straight line is represented by a line called the normal line that passes through the origin and is perpendicular to that straight line. The form of the normal line is $r=x\cos(\theta) + ysin(\theta)$ where $r$ is the length of the normal line and $\theta$ is the angle between the normal line and the $x$ axis.
@@ -70,9 +73,8 @@ def getLines(img, threshold, angle_step=1):
 
 ## Document Detection
 
-An example image of a document:
-
-![Example image of a document](images/1-Original%20Image.jpg)
+An example image of a document: 
+[See Original image](images/1-Original%20Image.jpg)
 
 ### Pre-processing
 
@@ -119,9 +121,9 @@ We can combine the intersections into quadrilaterals. In the end we chose the qu
 
 2. Page Extraction
 
-Given the document quadrilateral, We use Perspective Transform to extract the detected document.
+Given the document quadrilateral, We use Perspective Transform to extract the detected document. [See Transform on Original image](images/10-Original%20Transformed.jpg)
 
-![Transformed](images/9-Transformed.jpg)
+![Transformed](images/9-Resized%20Transformed.jpg)
 
 ## References
 
@@ -132,4 +134,3 @@ Given the document quadrilateral, We use Perspective Transform to extract the de
 [3] [https://docs.opencv.org/4.x/d9/d61/tutorial_py_morphological_ops.html](https://docs.opencv.org/4.x/d9/d61/tutorial_py_morphological_ops.html)
 
 [4] [https://docs.opencv.org/4.x/da/d22/tutorial_py_canny.html](https://docs.opencv.org/4.x/da/d22/tutorial_py_canny.html)
-
